@@ -1,0 +1,248 @@
+/* Reset dasar */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(270deg, #667eea, #764ba2, #667eea);
+  background-size: 600% 600%;
+  animation: moveGradient 15s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 40px 20px;
+  color: #333;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  background-color: #fff;
+  padding: 40px 35px;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 700px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 28px;
+  color: #4c4c4c;
+  font-size: 2.4rem;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 14px 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 18px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #667eea;
+  outline: none;
+}
+
+button[type="submit"] {
+  padding: 14px 22px;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #5a67d8;
+}
+
+/* Styling form pencarian */
+#searchForm {
+  margin-bottom: 20px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 18px;
+  transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+  border-color: #667eea;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  background-color: #f5f5f5;
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 18px;
+}
+
+li:hover {
+  background-color: #e2e8f0;
+  transform: scale(1.01);
+}
+
+.done {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
+}
+
+.btn-delete {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #e53e3e;
+  transition: color 0.3s ease;
+  margin-left: 10px;
+}
+
+.btn-delete:hover {
+  color: #c53030;
+}
+
+.btn-edit {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #3182ce;
+  margin-right: 14px;
+  transition: color 0.3s ease;
+}
+
+.btn-edit:hover {
+  color: #2b6cb0;
+}
+
+/* Highlight kata pencarian */
+mark {
+  background-color: #ffe58f;
+  color: #ad6800;
+  padding: 0 3px;
+  border-radius: 3px;
+}
+
+.task-date {
+  font-size: 15px;
+  color: #555;
+  margin-left: 20px;
+  margin-right: 25px;
+  font-style: italic;
+  padding: 4px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+  user-select: none;
+}
+
+
+/* Cegah teks panjang keluar container */
+li > span {
+  word-break: break-word;
+  white-space: normal;
+}
+
+/* ========================= RESPONSIVE ========================= */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  input[type="text"],
+  #searchInput {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+
+  button[type="submit"] {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 16px;
+  }
+
+  .task-date {
+    margin: 8px 0;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    font-size: 18px;
+    margin: 5px 8px 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  form {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    margin-top: 10px;
+  }
+
+  .task-date {
+    font-size: 14px;
+  }
+}
